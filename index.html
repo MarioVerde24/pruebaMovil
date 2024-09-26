@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="LOGO_BETEL.png" alt="" class="logo">
+        <ul>
+            <li><a href="">Inicio</a></li>
+            <li><a href="">Promociones</a></li>
+            <li><a href="">Preguntas Frecuentes</a></li>
+        </ul>
+    </header>
+    <section class="banner">
+        <div class="container-banner">
+            <h1 style="color: aliceblue;">Crea Nuevas Aventuras <br>
+                Explora nuevos lugares <br>
+                Descubre maravillas </h1>
+        </div>
+    </section>
+
+<!-- menu mobile -->
+
+<div class="container-slidemobile">
+    <label class="hamburger-menu">
+        <input type="checkbox" />
+      </label>
+      <aside class="sidebar" >
+        <nav>
+            <li><a href="">Inicio</a></li>
+            <li><a href="">Promociones</a></li>
+            <li><a href="">Preguntas Frecuentes</a></li>
+        </nav>
+      </aside>
+    </div>
+
+
+    <div class="container">
+        <h1>hola</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ut deleniti quaerat, doloribus quis cupiditate rem delectus, blanditiis quas doloremque reprehenderit sint nostrum assumenda. Atque sapiente fugit minus adipisci suscipit!</p>
+    </div>
+</body>
+
+<script>
+    window.addEventListener('scroll', function(){
+        var header = document.querySelector('header');
+        header.classList.toggle('sticky', window.scrollY > 0);
+    });
+</script>
+</html>

@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+
+
+html{
+    overflow-x: hidden;
+    scrollbar-width: thin;
+}
+
+body {
+    margin: 0;
+    font-family: Poppins;
+}
+
+header{
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.6s;
+    z-index: 999;
+    animation: shownavbar 1.5s;
+}
+
+header .logo{
+    height: 10vh;
+}
+
+header ul{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li{
+    position: relative;
+    list-style: none;
+}
+
+header ul li a {
+    position:relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #000;
+    letter-spacing: 2px;
+    font-weight: 500px;
+    transition: 0.5s;
+}
+
+@keyframes shownavbar{
+    from{
+        transform: translateY(-300px);
+    }
+
+    to{
+        transform: translateY(0px);
+    }
+}
+
+/* -- Banner--  */
+
+.banner{
+    margin: 0;
+    position: relative;
+    height: 100vh;
+    background: url(banner5.jpeg);
+    background-size: cover;
+    animation: showbanner 1s;
+}
+
+.container-banner {
+    position: absolute;
+    top: 250px;
+    right: 250px;
+}
+
+.container-banner h1{
+    font-weight: 900;
+    font-family: Poppins;
+    font-size: 2em;
+    margin: 0;
+    animation: showtxt 1.3s;
+    text-shadow: 5px 5px 10px  #000;
+}
+
+@keyframes showtxt{
+    from{
+        transform: translateX(150px);
+    }
+
+    to{
+        transform: translateX(0px);
+    }
+}
+
+@keyframes showbanner {
+    from{
+        scale: 300%;
+    }
+
+    to{
+        scale: 100%;
+    }
+}
+
+/*  -- Navbar--  */
+
+header.sticky .logo,
+header.sticky ul li a {
+    color: #000;
+}
+
+.sticky{
+    background-color: #fff;
+    border-radius:0 0 20px 20px;
+}
+
+/*  -- menu mobile --  */
+
+@media only screen and (max-width: 780px) {
+
+    header{
+        display: none;
+    }
+
+    *,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+:root {
+  --bar-width: 60px;
+  --bar-height: 8px;
+  --hamburger-gap: 6px;
+  --foreground: #b4fff5;
+  --background: transparent;
+  --hamburger-margin: 8px;
+  --animation-timing: 200ms ease-in-out;
+  --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+}
+
+.hamburger-menu {
+  --x-width: calc(var(--hamburger-height) * 1.41421356237);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--hamburger-gap);
+  width: max-content;
+  position: fixed;
+  top: var(--hamburger-margin);
+ right: var(--hamburger-margin);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.hamburger-menu:has(input:checked) {
+  --foreground: rgb(113, 236, 220);
+  --background: #85dcf1;
+}
+
+.hamburger-menu:has(input:focus-visible)::before,
+.hamburger-menu:has(input:focus-visible)::after,
+.hamburger-menu input:focus-visible {
+  border: 1px solid var(--background);
+  box-shadow: 0 0 0 1px var(--foreground);
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+  content: "";
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background-color: var(--foreground);
+  border-radius: 9999px;
+  transform-origin: left center;
+  transition: opacity var(--animation-timing), width var(--animation-timing),
+    rotate var(--animation-timing), translate var(--animation-timing),
+    background-color var(--animation-timing);
+}
+
+.hamburger-menu input {
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  pointer-events: none;
+}
+
+.hamburger-menu:has(input:checked)::before {
+  rotate: 45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / -2);
+}
+
+.hamburger-menu:has(input:checked)::after {
+  rotate: -45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / 2);
+}
+
+.hamburger-menu input:checked {
+  opacity: 0;
+  width: 0;
+}
+
+.sidebar {
+  transition: translate var(--animation-timing);
+  translate: -100%;
+  padding: 0.5rem 1rem;
+  padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);
+  background-color: var(--foreground);
+  color: var(--background);
+  max-width: 10rem;
+  min-height: 100vh;
+  position: fixed;
+  top: 1px;
+}
+
+.hamburger-menu:has(input:checked) + .sidebar {
+  translate: 0;
+}
+
+/*  --continer-h-banner--  */
+.container-banner{
+    top: 400px;
+    right: 40px;
+}
+}
